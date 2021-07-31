@@ -1,6 +1,10 @@
 
 # react-dotnet-vitejs
-Sample project using netcore 5, ViteJS, React and TypeScript. Runs via netcore CLI or F5 within Visual Studio.
+Sample project using netcore 5, ViteJS, React and TypeScript. 
+The entry HTML page is a Razor view that renders the user details into the entry page HTML and read using a React Context Provider. No authenticated is added to this code, you can easily scaffold the netcore Identity and render a mapped `User` object from the `User.Identity` property instead.
+
+
+Runs via netcore CLI or F5 within Visual Studio.
 
 ## Prerequisites
  - .NET 5.0 (or higher) SDK

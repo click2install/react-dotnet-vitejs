@@ -1,0 +1,24 @@
+@page
+@{
+  Layout = "Shared/_SpaLayout.cshtml";
+  ViewData["Title"] = "Dashboard";
+}
+
+<div id="root" />
+
+@section scripts
+{
+<environment names="Development">
+  <script type="module">
+    import RefreshRuntime from '@Url.Content("~/dist/@react-refresh")';
+    RefreshRuntime.injectIntoGlobalHook(window);
+    window.$RefreshReg$ = () => {};
+    window.$RefreshSig$ = () => (type) => type;
+    window.__vite_plugin_react_preamble_installed__ = true;
+  </script>
+  <script type="module" src="~/dist/src/index.tsx"></script>
+</environment>
+<environment names="Staging,Production">
+  <script type="module" asp-src-include="~/dist/assets/app.*.js"></script>
+</environment>
+}

@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@RenderBody()
+
+@section scripts
+{
+<environment names="Development">
+  <script type="module" src="~/dist/@@vite/client"></script>
+</environment>
+<environment names="Staging,Production">
+  <script type="module" asp-src-include="~/dist/assets/main.*.js"></script>
+</environment>
+
+@RenderSection("scripts", required: false)
+}
